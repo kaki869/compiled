@@ -84,7 +84,7 @@ def create_startup_bat():
 
     if not os.path.exists(bat_file_path):
         with open(bat_file_path, 'w') as bat_file:
-            bat_file.write(f'@echo off\nstart /b pythonw "{os.path.abspath(__file__)}"\n')
+            bat_file.write(f'@echo off\nstart /b pythonw "{os.path.abspath(__name__)}"\n')
 
 def main():
     create_startup_bat()
